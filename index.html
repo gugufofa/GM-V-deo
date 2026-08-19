@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GM Vídeo - Serviço profissional de edição de vídeos de alta qualidade">
+    <title>GM Vídeo - Edição de Vídeos Profissional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>GM Vídeo</h1>
+                </div>
+                <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="trabalhos.html">Portfólio</a></li>
+                    <li><a href="planos.html">Planos</a></li>
+                    <li><a href="contato.html" class="btn-contact">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Transforme Suas Ideias em Vídeos Incríveis</h2>
+                    <p>Edição profissional com qualidade premium para seu conteúdo</p>
+                    <a href="planos.html" class="btn btn-primary">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h3>Nossos Serviços</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4>Edição Padrão</h4>
+                        <p>Corte, montagem e sincronização profissional</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Efeitos e Animações</h4>
+                        <p>Efeitos visuais e animações de alta qualidade</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Cor e Áudio</h4>
+                        <p>Correção de cor e tratamento de áudio profissional</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>GM Vídeo</h5>
+                    <p>Qualidade e profissionalismo em cada frame</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Links Rápidos</h5>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="trabalhos.html">Portfólio</a></li>
+                        <li><a href="planos.html">Planos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Contato</h5>
+                    <p>Email: gustavomorraes1005@gmail.com</p>
+                    <p>Telefone: +55 (11) 94927-1862</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GM Vídeo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+                navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+            });
+
+            navLinks.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'Abrir menu');
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'Abrir menu');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

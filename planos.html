@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planos e preços - GM Vídeo">
+    <title>Planos - GM Vídeo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>GM Vídeo</h1>
+                </div>
+                <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="trabalhos.html">Portfólio</a></li>
+                    <li><a href="planos.html" class="active">Planos</a></li>
+                    <li><a href="contato.html" class="btn-contact">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Escolha o Plano Perfeito</h2>
+                    <p>Soluções de edição para todos os tipos de projeto</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="container">
+                <h3>Nossos Planos</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h4>Básico</h4>
+                        <div class="price">R$ 299</div>
+                        <p class="period">por projeto</p>
+                        <ul class="features">
+                            <li>Até 30 minutos de vídeo</li>
+                            <li>Edição padrão</li>
+                            <li>2 revisões</li>
+                            <li>Entrega em 7 dias</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-secondary">Solicitar</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <h4>Profissional</h4>
+                        <div class="price">R$ 799</div>
+                        <p class="period">por projeto</p>
+                        <ul class="features">
+                            <li>Até 60 minutos de vídeo</li>
+                            <li>Edição avançada</li>
+                            <li>Efeitos e transições</li>
+                            <li>4 revisões</li>
+                            <li>Entrega em 5 dias</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-primary">Solicitar</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h4>Premium</h4>
+                        <div class="price">R$ 1.499</div>
+                        <p class="period">por projeto</p>
+                        <ul class="features">
+                            <li>Ilimitado</li>
+                            <li>Edição premium</li>
+                            <li>Efeitos customizados</li>
+                            <li>Correção de cor profissional</li>
+                            <li>6 revisões</li>
+                            <li>Entrega em 3 dias</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-secondary">Solicitar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>GM Vídeo</h5>
+                    <p>Qualidade e profissionalismo em cada frame</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Links Rápidos</h5>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="trabalhos.html">Portfólio</a></li>
+                        <li><a href="planos.html">Planos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Contato</h5>
+                    <p>Email: gustavomorraes1005@gmail.com</p>
+                    <p>Telefone: +55 (11) 94927-1862</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GM Vídeo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+                navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+            });
+
+            navLinks.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'Abrir menu');
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'Abrir menu');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
