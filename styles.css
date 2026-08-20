@@ -377,6 +377,10 @@ section h3 {
     opacity: 1;
 }
 
+.portfolio-card:focus-within .overlay {
+    opacity: 1;
+}
+
 .play-btn {
     width: 60px;
     height: 60px;
@@ -643,6 +647,10 @@ section h3 {
 @media (max-width: 768px) {
     html {
         scroll-behavior: smooth;
+    }
+
+    .portfolio-card .overlay {
+        opacity: 1;
     }
 
     .nav-toggle {
