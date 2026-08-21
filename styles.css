@@ -61,13 +61,10 @@ textarea {
     align-items: center;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #6366f1, #f59e0b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.logo img {
+    width: auto;
+    height: 48px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -708,8 +705,8 @@ section h3 {
         display: none;
     }
 
-    .logo h1 {
-        font-size: 1.4rem;
+    .logo img {
+        height: 40px;
     }
 
     .hero-content h2 {
