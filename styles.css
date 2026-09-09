@@ -6,9 +6,10 @@
 }
 
 :root {
-    --primary-color: #6366f1;
+    --primary-color: #1eb5ff;
     --secondary-color: #f59e0b;
-    --dark-bg: #0f172a;
+    --dark-bg: #020d1a;
+    --header-bg: linear-gradient(135deg, #020d1a 0%, #0b1e2f 35%, #1eb5ff 100%);
     --light-bg: #f8fafc;
     --text-dark: #1e293b;
     --text-light: #64748b;
@@ -43,12 +44,13 @@ textarea {
 
 /* ===== HEADER E NAVEGAÇÃO ===== */
 .header {
-    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e3a8a 100%);
+    background: var(--header-bg);
     color: white;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 20px rgba(30, 181, 255, 0.35);
+    border-bottom: 1px solid rgba(30, 181, 255, 0.8);
 }
 
 .navbar {
@@ -112,7 +114,7 @@ textarea {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--secondary-color);
+    color: #d8f4ff;
 }
 
 .nav-links a.active::after {
@@ -122,7 +124,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--secondary-color);
+    background: rgba(30, 181, 255, 0.9);
 }
 
 .btn-contact {
@@ -158,6 +160,13 @@ textarea {
     margin-bottom: 2rem;
 }
 
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 /* ===== BOTÕES ===== */
 .btn {
     display: inline-block;
@@ -172,24 +181,27 @@ textarea {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), #0e7ae5);
     color: white;
+    box-shadow: 0 10px 22px rgba(30, 181, 255, 0.25);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 14px 28px rgba(30, 181, 255, 0.3);
 }
 
 .btn-secondary {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    border: 2px solid rgba(30, 181, 255, 0.5);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
 .btn-secondary:hover {
     background: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
 }
 
 /* ===== SECTION TITLES ===== */
@@ -259,7 +271,7 @@ section h3 {
 
 .pricing-card.featured {
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 30px rgba(30, 181, 255, 0.22);
     transform: scale(1.05);
 }
 
@@ -413,7 +425,7 @@ section h3 {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e3a8a 100%);
+    background: var(--header-bg);
     color: white;
     padding: 3rem 0 1rem;
     margin-top: 4rem;
@@ -487,8 +499,8 @@ section h3 {
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(245, 158, 11, 0.08));
-    border: 1px solid var(--border-color);
+    background: linear-gradient(135deg, rgba(30, 181, 255, 0.12), rgba(245, 158, 11, 0.08));
+    border: 1px solid rgba(30, 181, 255, 0.2);
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -627,7 +639,7 @@ section h3 {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: 2px solid rgba(99, 102, 241, 0.2);
+    outline: 2px solid rgba(30, 181, 255, 0.2);
     border-color: var(--primary-color);
 }
 
@@ -715,6 +727,16 @@ section h3 {
 
     .hero-content p {
         font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .pricing-card.featured {
