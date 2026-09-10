@@ -6,15 +6,23 @@
 }
 
 :root {
-    --primary-color: #1eb5ff;
-    --secondary-color: #f59e0b;
+    --primary-rgb: 30, 181, 255;
+    --secondary-rgb: 245, 158, 11;
+    --primary-color: rgb(var(--primary-rgb));
+    --primary-color-strong: #0e7ae5;
+    --secondary-color: rgb(var(--secondary-rgb));
     --dark-bg: #020d1a;
-    --header-bg: linear-gradient(135deg, #020d1a 0%, #0b1e2f 35%, #1eb5ff 100%);
+    --dark-bg-2: #0b1e2f;
     --light-bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-soft: rgba(var(--primary-rgb), 0.12);
     --text-dark: #1e293b;
     --text-light: #64748b;
+    --text-soft: #cbd5e1;
     --border-color: #e2e8f0;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --brand-gradient: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-2) 35%, var(--primary-color) 100%);
+    --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--primary-color-strong));
 }
 
 body {
@@ -44,13 +52,13 @@ textarea {
 
 /* ===== HEADER E NAVEGAÇÃO ===== */
 .header {
-    background: var(--header-bg);
+    background: var(--brand-gradient);
     color: white;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 0 20px rgba(30, 181, 255, 0.35);
-    border-bottom: 1px solid rgba(30, 181, 255, 0.8);
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.35);
+    border-bottom: 1px solid rgba(var(--primary-rgb), 0.8);
 }
 
 .navbar {
@@ -114,7 +122,7 @@ textarea {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #d8f4ff;
+    color: var(--text-soft);
 }
 
 .nav-links a.active::after {
@@ -124,7 +132,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 2px;
-    background: rgba(30, 181, 255, 0.9);
+    background: rgba(var(--primary-rgb), 0.9);
 }
 
 .btn-contact {
@@ -181,20 +189,20 @@ textarea {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), #0e7ae5);
+    background: var(--primary-gradient);
     color: white;
-    box-shadow: 0 10px 22px rgba(30, 181, 255, 0.25);
+    box-shadow: 0 10px 22px rgba(var(--primary-rgb), 0.25);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 28px rgba(30, 181, 255, 0.3);
+    box-shadow: 0 14px 28px rgba(var(--primary-rgb), 0.3);
 }
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.9);
     color: var(--primary-color);
-    border: 2px solid rgba(30, 181, 255, 0.5);
+    border: 2px solid rgba(var(--primary-rgb), 0.5);
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
@@ -271,7 +279,7 @@ section h3 {
 
 .pricing-card.featured {
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(30, 181, 255, 0.22);
+    box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.22);
     transform: scale(1.05);
 }
 
@@ -321,6 +329,15 @@ section h3 {
 
 .pricing-card .btn {
     width: 100%;
+    text-align: center;
+}
+
+.pricing-note {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
     text-align: center;
 }
 
@@ -425,7 +442,7 @@ section h3 {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--header-bg);
+    background: var(--brand-gradient);
     color: white;
     padding: 3rem 0 1rem;
     margin-top: 4rem;
@@ -499,8 +516,8 @@ section h3 {
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, rgba(30, 181, 255, 0.12), rgba(245, 158, 11, 0.08));
-    border: 1px solid rgba(30, 181, 255, 0.2);
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.12), rgba(var(--secondary-rgb), 0.08));
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -639,7 +656,7 @@ section h3 {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: 2px solid rgba(30, 181, 255, 0.2);
+    outline: 2px solid rgba(var(--primary-rgb), 0.2);
     border-color: var(--primary-color);
 }
 
