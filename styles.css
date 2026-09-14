@@ -72,8 +72,9 @@ textarea {
 }
 
 .logo img {
-    width: auto;
-    height: 48px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
     object-fit: contain;
 }
 
@@ -735,7 +736,8 @@ section h3 {
     }
 
     .logo img {
-        height: 40px;
+        width: 42px;
+        height: 42px;
     }
 
     .hero-content h2 {
